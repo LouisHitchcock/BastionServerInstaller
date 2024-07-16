@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bastion Server Installer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Bastion Server Installer</h1>
+        <div class="form-group">
+            <label for="serverType">Server Type</label>
+            <select id="serverType" onchange="updateVersionOptions()">
+                <option value="" disabled selected>Select Server Type</option>
+                <option value="paper">Paper</option>
+                <option value="bucket">Bukkit</option>
+                <option value="vanilla">Vanilla</option>
+                <option value="fabric">Fabric</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="version">Version</label>
+            <select id="version">
+                <option value="" disabled selected>Select Server Version</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="installLocation">Install Location</label>
+            <input type="text" id="installLocation" placeholder="Enter the folder path" value="C:\Users\User\Documents\Minecraft\Server">
+        </div>
+        <div class="form-group">
+            <label for="allocatedRam">Allocated RAM (GB)</label>
+            <input type="number" id="allocatedRam" min="1" max="10" step="1" value="4">
+        </div>
+        <div class="form-group">
+            <label for="numPlayers">Number of Players</label>
+            <input type="number" id="numPlayers" min="1" max="200" value="10">
+        </div>
+        <div class="form-group">
+            <label for="port">Port</label>
+            <input type="number" id="port" min="1000" value="25565">
+        </div>
+        <div class="form-group">
+            <label for="eula">Accept EULA?</label>
+            <input type="checkbox" id="eula">
+        </div>
+        <button onclick="downloadConfig()">Download</button>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.6.0/jszip.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
